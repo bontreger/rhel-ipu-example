@@ -1,4 +1,6 @@
     remediation_todo:
     # Add pre-defined remediation tasks from the remediation playbooks in a list here. The complete list is documented at https://github.com/redhat-cop/infra.leapp/tree/main/roles/remediate
-      - leapp_firewalld_allowzonedrifting
       - leapp_missing_pkg
+      - leapp_loaded_removed_kernel_drivers
+      - leapp_cifs_detected
+      - leapp_nfs_detected
