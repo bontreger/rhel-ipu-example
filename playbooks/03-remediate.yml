@@ -1,0 +1,13 @@
+---
+- name: Remediate
+  hosts: all
+  strategy: free
+  become: true
+  force_handlers: true
+  vars:
+
+  tasks:
+    - name: Perform remediations on the system
+      ansible.builtin.import_role:
+        name: infra.leapp.remediate
+...

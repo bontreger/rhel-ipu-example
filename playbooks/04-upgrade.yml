@@ -1,0 +1,11 @@
+---
+- name: Upgrade
+  hosts: all
+  strategy: free
+  become: true
+  force_handlers: true
+  tasks:
+    - name: Perform OS upgrade
+      ansible.builtin.import_role:
+        name: infra.leapp.upgrade
+...

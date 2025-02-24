@@ -1,0 +1,10 @@
+---
+- name: Post-upgrade finalization steps
+  hosts: all
+  tasks:
+  # These tasks are unique to your environment.  Often, they will be the inverse of the pre-upgrade checks, restoring configurations or services
+    - name: Example task of a post-upgrade finalization step
+      ansible.builtin.service:
+        name: puppet
+        state: started
+        

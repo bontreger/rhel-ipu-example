@@ -1,0 +1,26 @@
+# See https://github.com/redhat-cop/infra.leapp/tree/main/roles/upgrade#custom-repos-variables
+local_repos_pre_leapp:
+local_repos_leapp:
+local_repos_post_upgrade:
+repo_files_to_remove_at_upgrade:
+
+#EXAMPLE
+# local_repos_pre_leapp:
+#   - name: rhel-server-7-rpms
+#     description: Red Hat 7 Server
+#     baseurl: http://repo02.example.com/leapp/7Server/rhel-server-7-rpms
+#     # enabled: 1 # Default 1
+#     # gpgcheck: 0 # Default 0
+#     # gpgkey: XXX # Default omit.
+#     # repo_gpgcheck: 0 # Default omit.
+#     # file: local # The filename to use in /etc/yum.repos.d minus the .repo, default local.
+#     # state: present # Defaults to present
+#   - name: rhel-server-7-rpms
+#     description: Red Hat 7 Server
+#     baseurl: http://repo02.example.com/leapp/7Server/rhel-server-7-rpms
+#     # enabled: 1 # Default 1
+#     # gpgcheck: 0 # Default 0
+#     # gpgkey: XXX # Default omit.
+#     # repo_gpgcheck: 0 # Default omit.
+#     # file: local # The filename to use in /etc/yum.repos.d minus the .repo, default local.
+#     # state: present # Defaults to present

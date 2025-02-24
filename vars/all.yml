@@ -1,0 +1,18 @@
+target_version: "8.10"
+# Set the leapp upgrade type, and see the associated vars file for your upgrade type
+# Options are
+# satellite
+# cdn
+# rhui
+# custom
+leapp_upgrade_type: satellite
+
+leapp_answerfile: |
+  [remove_pam_pkcs11_module_check]
+  confirm = true
+
+# The following variables should not need to be edited in most situations but are exposed in case they are needed
+leapp_preupg_opts: "--target {{ target_version }}"
+leapp_upgrade_opts: "--target {{ target_version }}"
+# selinux_mode: permissive  - selinux will default to what was active before the upgrade, but can be overridden
+ 

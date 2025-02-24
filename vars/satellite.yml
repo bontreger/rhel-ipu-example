@@ -1,0 +1,4 @@
+# If using Satellite, provide the following variables
+satellite_organization: My Satellite Organization
+satellite_activation_key_pre_leapp: MY_ACTIVATION_KEY_PRE
+satellite_activation_key_leapp: MY_ACTIVATION_KEY
