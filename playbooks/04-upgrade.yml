@@ -1,7 +1,6 @@
 ---
 - name: Upgrade
   hosts: all
-  strategy: free
   become: true
   force_handlers: true
   tasks:

@@ -3,12 +3,9 @@
   hosts: all
   become: true
   force_handlers: true
-  vars:
-
   tasks:
     - name: Perform remediations on the system
       ansible.builtin.import_role:
         name: infra.leapp.remediate
-      when: ansible_os_family == "RedHat" and ansible_distribution_major_version >= 8
     # Add additional remediation tasks for upgrading RHEL 7 systems
     # or other fixes that are not covered by the remediate playbooks here
