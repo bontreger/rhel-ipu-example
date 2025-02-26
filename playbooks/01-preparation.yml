@@ -8,5 +8,5 @@
 # Enable the RHEL-7-server-extras repo
     - name: Enable the rhel-7-server-extras repo
       community.general.rhsm_repository:
-        name: rhel-7-server-extras
+        name: rhel-7-server-extras-rpms
         state: enabled
