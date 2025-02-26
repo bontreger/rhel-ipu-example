@@ -5,7 +5,9 @@
   # These tasks are unique to your environment.  Often, they will be discovered through runnning the pre-upgrade validation playbook
   # Add your pre-upgrade tasks here, such as services to be disabled, configurations to be backed up, or third-party software that needs to be uninstalled
   # as your environment is upgraded from RHEL X to RHEL X+1
-    - name: Example task of a pre-preparation step
-      ansible.builtin.service:
-        name: puppet
-        state: stopped
+# Enable the RHEL-7-server-extras repo
+    - name: Enable the rhel-7-server-extras repo
+      ansible.builtin.yum_repository:
+        name: rhel-7-server-extras
+        state: present
+        enabled: true
