@@ -1,5 +1,4 @@
 collections:
-#- source: https://gitea-gitea.apps.ocp.bontreger.dev/ryan/infra.leapp.git
-#  type: git
-- name: infra.leapp
+- source: https://gitea-gitea.apps.ocp.bontreger.dev/ryan/infra.leapp.git
+  type: git
 - name: community.general
