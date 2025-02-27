@@ -3,6 +3,8 @@
   hosts: all
   become: true
   force_handlers: true
+  vars_files:
+    ../vars/remediation_list.yml
   tasks:
     - name: Perform remediations on the system
       ansible.builtin.import_role:

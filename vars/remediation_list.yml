@@ -4,3 +4,5 @@
       #- leapp_loaded_removed_kernel_drivers
       - leapp_cifs_detected
       - leapp_nfs_detected
+      - leapp_missing_efibootmgr
+      - leapp_pam_tally2
