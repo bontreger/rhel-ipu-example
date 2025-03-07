@@ -10,3 +10,5 @@
       community.general.rhsm_repository:
         name: rhel-7-server-extras-rpms
         state: enabled
+
+...

@@ -7,3 +7,5 @@
       ansible.builtin.service:
         name: puppet
         state: started
+
+...

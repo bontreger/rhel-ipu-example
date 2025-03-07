@@ -1,0 +1,25 @@
+---
+- name: Playbook to configure execution environments
+  hosts: builder
+  gather_facts: false
+  connection: local
+  vars_files:
+    - "../vault.yml"
+    - "../aap_auth.yml"
+  vars:
+    ee_list:
+      - name: "leapp_ee"
+        alt_name: LEAPP Execution Environment
+        
+    controller_execution_environments:
+      - name: "leapp execution environment"
+  tasks:
+    - name: Include ee_builder role
+      ansible.builtin.include_role:
+        name: infra.ee_utilities.ee_builder
+
+    - name: Add Execution Environment to controller
+      ansible.builtin.include_role:
+        name: infra.aap_configuration.execution_environments
+
+...

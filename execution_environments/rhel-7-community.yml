@@ -1,0 +1,26 @@
+# This is a starting-point of an EE for RHEL 7 to 8 migrations. This is a community-based distribution and doesn't rely on an ansible subscription
+# As this depends on a deprecated version of Ansible core, all collections should have their versions specified to an exact version release
+# The awx-ee may need to be locked at some point in the future
+---
+version: 3
+
+build_arg_defaults:
+  ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: '--pre'
+
+dependencies:
+  galaxy:
+    - name: infra.leapp
+      version: 1.5.0
+    - name: infra.aap_configuration
+    - name: community.general
+      version: 10.3.0
+    - name: community.vmware
+    - name: awx.awx
+  python:
+    - pyvvmomi
+    - vmware-vcenter
+    - vmware-vapi-common-client
+
+images:
+  base_image:
+    name: quay.io/ansible/awx-ee:latest

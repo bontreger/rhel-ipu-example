@@ -1,0 +1,25 @@
+# This is a starting-point of an EE for RHEL 7 to 8 migrations. It does require a `podman login registry.redhat.io` to pull down the base_image
+# As this depends on a deprecated version of Ansible core, all collections should have their versions specified to an exact version release
+---
+version: 3
+
+build_arg_defaults:
+  ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: '--pre'
+
+dependencies:
+  galaxy:
+    collections:
+    - name: infra.leapp
+      version: 1.4.0
+    - name: infra.aap_configuration
+    - name: community.general
+      version: 10.3.0
+    - name: community.vmware
+  python:
+    - pyvvmomi
+    - vmware-vcenter
+    - vmware-vapi-common-client
+
+images:
+  base_image:
+    name: registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest

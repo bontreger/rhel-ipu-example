@@ -1,0 +1,22 @@
+---
+- name: Cleanup
+  hosts: all
+  gather_facts: true
+  become: true
+  force_handlers: true
+
+  tasks:
+  # Edit this section to include all the tasks needed to clean up your environment
+    - name: Remove the snapshot of your existing server
+      community.vmware.vmware_guest_snapshot:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: "{{ datacenter_name }}"
+        folder: "/{{ datacenter_name }}/vm/"
+        name: "{{ guest_name }}"
+        state: absent
+        snapshot_name: rhel_ipu_snapshot
+      delegate_to: localhost
+
+...
