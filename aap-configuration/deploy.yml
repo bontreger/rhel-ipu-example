@@ -5,6 +5,8 @@
     - "../vars/aap/all.yml"
     - "../vars/aap/credentials.yml"
     - "../vars/aap/projects.yml"
+    - "../vars/aap/inventory.yml"
+    - "../vars/aap/job_templates.yml"
     - "../vars/aap/vault.yml"
 
   tasks:
@@ -31,5 +33,16 @@
       ansible.builtin.include_role:
         name: infra.aap_configuration.controller_projects
 
+    - name: Create inventory
+      ansible.builtin.include_role:
+        name: infra.aap_configuration.controller_inventories
+
+    - name: Create inventory source
+      ansible.builtin.include_role:
+        name: infra.aap_configuration.controller_inventory_sources
+
+#    - name: Create job templates
+#      ansible.builtin.include_role:
+#        name: infra.aap_configuration.controller_job_templates
 
 ...

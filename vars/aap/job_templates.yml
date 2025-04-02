@@ -1,0 +1,10 @@
+---
+controller_templates:
+- name: "01-Backup"
+  job_type: run
+  inventory: LEAPP Inventory
+  execution_environment: leapp_ee
+  project: LEAPP Automation
+  playbook: playbooks/01-backup.yml
+  credentials:
+  - "LEAPP Machine Credential"

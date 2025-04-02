@@ -1,6 +1,6 @@
 ---
 controller_projects:
-- name: LEAPP Configuration
+- name: LEAPP Automation
   organization: "{{ controller_organization | default('Default') }}"
   scm_branch: main
   scm_clean: 'no'
