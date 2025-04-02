@@ -10,7 +10,7 @@ dependencies:
   galaxy:
     collections:
     - name: infra.leapp
-      version: 1.4.0
+      version: 1.5.0
     - name: infra.aap_configuration
     - name: community.general
       version: 10.3.0

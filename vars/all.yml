@@ -1,3 +1,4 @@
+#target_version: "9.4"
 target_version: "8.10"
 # Set the leapp upgrade type, and see the associated vars file for your upgrade type
 # Options are

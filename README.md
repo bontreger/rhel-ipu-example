@@ -2,12 +2,26 @@
 Baseline Ansible Content for a RHEL In-Place Upgrade (RHEL IPU)
 
 # Preparation
-Coming soon: Ansible Automation Platform Configuration-as-code initial deployment instructions
-
 This content relies on the infra.leapp collection at version 1.5+ for RHEL 7->8
 
+Ensure the latest version of the collection is available in your environment.
 
-# Usage
+# Design Decisions
+
+This codebase ships with the configuration-as-code elements to provision a RHEL In-Place Upgrade workflow directly into your Ansible Automation Platform 2.5 instance.  If you are using Ansible Automation Platform, these can be used to quickly deploy the assets to AAP for both demonstration and production usage.
+
+# Usage with AAP
+
+To deploy all the assets to Ansible Automation Platform, review the file aap-configration/vars/main.yml and aap-configuration/vars/vault.yml and configure to your environment.
+If not every asset needs to be created, such as machine and source control credentials, or custom execution environments, remove the tasks from the playbook prior to running.
+
+Rename the example inventory and complete with your controller and hub details.
+
+To deploy the configuration, run the command from the base directory
+` ansible-playbook -i aap_inventory aap-configuration/deploy.yml `
+
+
+# Usage from the command line
 Prior to running this workflow, an execution environment must be created with the appropriate ansible versions, since supported ansible versions change between RHEL 7, 8, 9, and beyond
 Example EE files are provided in execution_environments for both community and supported EEs.
 

@@ -1,0 +1,11 @@
+vault_aap_scm_username: ryan
+vault_aap_scm_password: password
+vault_aap_machine_username: admin
+vault_aap_machine_password: password
+vault_aap_scm_path: https://gitlab.bontreger.dev/
+vault_aap_hostname: https://aap.bontreger.dev/
+# Either the username and password, or the token, are required.
+vault_aap_username: admin
+vault_aap_password: password
+vault_aap_token: 1234567890
+vault_aap_validate_certs: true

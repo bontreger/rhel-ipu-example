@@ -5,10 +5,21 @@
   # These tasks are unique to your environment.  Often, they will be discovered through runnning the pre-upgrade validation playbook
   # Add your pre-upgrade tasks here, such as services to be disabled, configurations to be backed up, or third-party software that needs to be uninstalled
   # as your environment is upgraded from RHEL X to RHEL X+1
+
 # Enable the RHEL-7-server-extras repo
     - name: Enable the rhel-7-server-extras repo
       community.general.rhsm_repository:
         name: rhel-7-server-extras-rpms
         state: enabled
+      when: ansible_distribution == 'RedHat' and ansible_distribution_major_version | int == 7
+# Enable the RHEL 8 repos needed for a RHEL 8 LEAPP
+    - name: Enable the rhel8 repos
+      community.general.rhsm_repository:
+        name: "{{ item }}"
+        state: enabled
+      loop:
+        - rhel-8-for-x86_64-baseos-rpms
+        - rhel-8-for-x86_64-appstream-rpms
+      when: ansible_distribution == 'RedHat' and ansible_distribution_major_version | int == 8
 
 ...

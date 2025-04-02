@@ -10,7 +10,6 @@
     ee_list:
       - name: "leapp_ee"
         alt_name: LEAPP Execution Environment
-        
     controller_execution_environments:
       - name: "leapp execution environment"
   tasks:

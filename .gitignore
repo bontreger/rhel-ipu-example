@@ -1,6 +1,10 @@
 inventory.ini
 ansible.cfg
 .password
+.vault_password
 context
 context/*
 vault.yml
+.vscode
+.vscode/*
+aap_inventory
