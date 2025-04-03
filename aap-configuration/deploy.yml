@@ -4,6 +4,7 @@
   vars_files:
     - "../vars/aap/all.yml"
     - "../vars/aap/credentials.yml"
+    - "../vars/aap/ee.yml"
     - "../vars/aap/projects.yml"
     - "../vars/aap/inventory.yml"
     - "../vars/aap/job_templates.yml"
@@ -19,16 +20,34 @@
         gateway_username: "{{ aap_username }}"
         gateway_password: "{{ aap_password }}"
         validate_certs: false
+      when: aap_token is undefined
 
     - name: Use our new token to make another call
       ansible.builtin.set_fact:
         aap_token: "{{ aap_token }}"
         cacheable: true
+      when: aap_token is undefined
 
     - name: Create credentials
       ansible.builtin.include_role:
         name: infra.aap_configuration.controller_credentials
 
+    - name: Create execution environments
+      when: create_ee
+      block:
+        - name: Pull builder images
+          containers.podman.podman_image:
+            name: "{{ ee_base_image }}"
+            validate_certs: false
+
+        - name: Build execution environment
+          ansible.builtin.include_role:
+            name: infra.ee_utilities.ee_builder
+
+        - name: Import execution environment from hub into controller
+          ansible.builtin.include_role:
+            name: infra.aap_configuration.controller_execution_environments
+  
     - name: Create project
       ansible.builtin.include_role:
         name: infra.aap_configuration.controller_projects
@@ -41,8 +60,8 @@
       ansible.builtin.include_role:
         name: infra.aap_configuration.controller_inventory_sources
 
-#    - name: Create job templates
-#      ansible.builtin.include_role:
-#        name: infra.aap_configuration.controller_job_templates
+    - name: Create job templates
+      ansible.builtin.include_role:
+        name: infra.aap_configuration.controller_job_templates
 
 ...

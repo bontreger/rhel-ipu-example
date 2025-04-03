@@ -1,12 +1,15 @@
 ---
 controller_organization: Default
 
+# Should we create and deploy an EE as part of the AAP deployment?
+# If you choose false, provide your own ee with the same collections and update the job templates to use your ee
+create_ee: true
+
 aap_hostname: "{{ vault_aap_hostname }}"
 aap_username: "{{ vault_aap_username }}"
 aap_password: "{{ vault_aap_password }}"
 aap_validate_certs: "{{ vault_aap_validate_certs }}"
 aap_token: "{{ vault_aap_token }}"
-
 
 aap_scm_username: "{{ vault_aap_scm_username }}"
 aap_scm_password: "{{ vault_aap_scm_password }}"
@@ -14,3 +17,8 @@ aap_machine_username: "{{ vault_aap_machine_username }}"
 aap_machine_password: "{{ vault_aap_machine_password }}"
 aap_scm_path: "https://gitea-gitea.apps.ocp.bontreger.dev/"
 aap_scm_project_url: "https://gitea-gitea.apps.ocp.bontreger.dev/ryan/rhel-7-IPU.git"
+
+aap_hub_token: "{{ vault_hub_token }}"
+aap_hub_url: "{{ vault_hub_url }}"
+aap_hub_registry_username: "{{ vault_aap_hub_registry_username }}"
+aap_hub_registry_password: "{{ vault_aap_hub_registry_password }}"

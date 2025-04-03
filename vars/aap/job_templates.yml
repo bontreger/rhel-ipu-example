@@ -3,8 +3,56 @@ controller_templates:
 - name: "01-Backup"
   job_type: run
   inventory: LEAPP Inventory
-  execution_environment: leapp_ee
+  execution_environment: "LEAPP EE"
   project: LEAPP Automation
   playbook: playbooks/01-backup.yml
+  credentials:
+  - "LEAPP Machine Credential"
+- name: "02-Analysis"
+  job_type: run
+  inventory: LEAPP Inventory
+  execution_environment: "LEAPP EE"
+  project: LEAPP Automation
+  playbook: playbooks/02-analysis.yml
+  credentials:
+  - "LEAPP Machine Credential"
+- name: "03-Preparation"
+  job_type: run
+  inventory: LEAPP Inventory
+  execution_environment: "LEAPP EE"
+  project: LEAPP Automation
+  playbook: playbooks/03-preparation.yml
+  credentials:
+  - "LEAPP Machine Credential"
+- name: "04-Remediate"
+  job_type: run
+  inventory: LEAPP Inventory
+  execution_environment: "LEAPP EE"
+  project: LEAPP Automation
+  playbook: playbooks/04-remediate.yml
+  credentials:
+  - "LEAPP Machine Credential"
+- name: "05-Upgrade"
+  job_type: run
+  inventory: LEAPP Inventory
+  execution_environment: "LEAPP EE"
+  project: LEAPP Automation
+  playbook: playbooks/05-upgrade.yml
+  credentials:
+  - "LEAPP Machine Credential"
+- name: "06-Postupgrade"
+  job_type: run
+  inventory: LEAPP Inventory
+  execution_environment: "LEAPP EE"
+  project: LEAPP Automation
+  playbook: playbooks/06-postupgrade.yml
+  credentials:
+  - "LEAPP Machine Credential"
+- name: "07-Cleanup"
+  job_type: run
+  inventory: LEAPP Inventory
+  execution_environment: "LEAPP EE"
+  project: LEAPP Automation
+  playbook: playbooks/07-cleanup.yml
   credentials:
   - "LEAPP Machine Credential"

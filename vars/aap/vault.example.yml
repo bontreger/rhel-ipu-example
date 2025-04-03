@@ -7,5 +7,11 @@ vault_aap_hostname: https://aap.bontreger.dev/
 # Either the username and password, or the token, are required.
 vault_aap_username: admin
 vault_aap_password: password
+# This token appears in Access Management->Users->username->Tokens
 vault_aap_token: 1234567890
 vault_aap_validate_certs: true
+# This is the automation hub API token
+vault_hub_token: 1234567890
+vault_hub_url: aap.bontreger.dev/
+vault_aap_hub_registry_username: admin
+vault_aap_hub_registry_password: password

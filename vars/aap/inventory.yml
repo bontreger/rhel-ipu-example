@@ -1,14 +1,14 @@
 ---
 controller_inventories:
-- name: LEAPP inventory
+- name: LEAPP Inventory
   organization: "{{ controller_organization | default('Default') }}"
   description: "An inventory of hosts to be updated with LEAPP"
 
 # This inventory source should be customized to your environment. This is using the inventory file in the root directory of this project for example and demonstration only
 controller_inventory_sources:
-- name: LEAPP inventory source
+- name: LEAPP Inventory Source
   source: scm
-  inventory: "LEAPP inventory"
+  inventory: "LEAPP Inventory"
   credential: "LEAPP SCM Credential"
   source_project: "LEAPP Automation"
   source_path: "sample_inventory.ini"

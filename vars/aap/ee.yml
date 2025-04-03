@@ -1,0 +1,46 @@
+---
+ee_builder_dir: "."
+ee_builder_dir_clean: false
+ee_update_base_images: false
+
+ee_reg_credential: "LEAPP Registry Credential"
+ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-supported-rhel8:latest
+ee_pull_collections_from_hub: true
+ee_aap_version: 2.5
+ee_verbosity: 1
+#ah_path_prefix: 'galaxy'
+ee_ah_host: "{{ aap_hub_url }}"
+ee_ah_token: "{{ aap_hub_token }}"
+ee_registry_dest: "{{ aap_hub_url }}"
+ee_registry_username: "{{ aap_hub_registry_username }}"
+ee_registry_password: "{{ aap_hub_registry_password }}"
+ee_registry_token: "{{ aap_hub_token }}"
+
+
+ee_list:
+ - name: leapp_ee
+   alt_name: "LEAPP EE"
+   tag: latest
+   dependencies:
+     system:
+     - libxml2-devel
+     - gcc
+     - systemd-devel
+     - python3.11-devel
+     python:
+     - awxkit
+     - python-dateutil
+     - pyyaml
+     galaxy:
+       collections:
+         - ansible.controller
+         - infra.aap_configuration
+         - infra.ee_utilities
+         - ansible.posix
+         - ansible.platform
+         - containers.podman
+         - awx.awx
+
+controller_execution_environments:
+  - name: "LEAPP EE"
+    image: "{{ aap_hub_url }}/leapp_ee"
