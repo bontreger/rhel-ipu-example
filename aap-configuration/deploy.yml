@@ -47,7 +47,7 @@
         - name: Import execution environment from hub into controller
           ansible.builtin.include_role:
             name: infra.aap_configuration.controller_execution_environments
-  
+
     - name: Create project
       ansible.builtin.include_role:
         name: infra.aap_configuration.controller_projects

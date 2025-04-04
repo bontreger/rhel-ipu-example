@@ -1,5 +1,6 @@
 #target_version: "9.4"
 target_version: "8.10"
+use_cockpit: true
 # Set the leapp upgrade type, and see the associated vars file for your upgrade type
 # Options are
 # satellite

@@ -8,20 +8,20 @@ controller_templates:
   playbook: playbooks/01-backup.yml
   credentials:
   - "LEAPP Machine Credential"
-- name: "02-Analysis"
+- name: "02-Preparation"
   job_type: run
   inventory: LEAPP Inventory
   execution_environment: "LEAPP EE"
   project: LEAPP Automation
-  playbook: playbooks/02-analysis.yml
+  playbook: playbooks/02-preparation.yml
   credentials:
   - "LEAPP Machine Credential"
-- name: "03-Preparation"
+- name: "03-Analysis"
   job_type: run
   inventory: LEAPP Inventory
   execution_environment: "LEAPP EE"
   project: LEAPP Automation
-  playbook: playbooks/03-preparation.yml
+  playbook: playbooks/03-analysis.yml
   credentials:
   - "LEAPP Machine Credential"
 - name: "04-Remediate"
